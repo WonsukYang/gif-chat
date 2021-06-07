@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>GIF chatroom</h1>
+<fieldset>
+    <legend>Chatroom List</legend>
+    <table>
+        <thead>
+            <tr>
+                <th>Room title</th>
+                <th>Type</th>
+                <th>Max people</th>
+                <th>Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for room in rooms %}
+            <tr data-id="{{room.id}}">
+                
+            </tr>
+        </tbody>
+    </table>
+</fieldset>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF chatroom</title>
+</head>
+<body>
+    <div>Check console & network tab via F12</div>
+    <script>
+        const webSocket = new WebSocket("ws://localhost:3001");
+        webSocket.onopen = function () {
+            console.log('server connected to websocket');
+        };
+        webSocket.onmessage = function (event) {
+            console.log(event.data);
+            webSocket.send('client responds to server');
+        }
+    </script>
+</body>
+</html>
